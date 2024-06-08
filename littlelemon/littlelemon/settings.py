@@ -73,13 +73,8 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+from .local_settings import DATABASES_SETTINGS
+DATABASES = DATABASES_SETTINGS
 
 
 # Password validation
