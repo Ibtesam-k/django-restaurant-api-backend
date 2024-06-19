@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework import viewsets
 from rest_framework.response import Response
-from .serializers import BookingSerializer,MenuSerializer
+from django.contrib.auth.models import User
+from .serializers import BookingSerializer,MenuSerializer,UserSerializer
 from .models import *
+from rest_framework import generics 
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
-class MenuView(APIView):
+""" class MenuView(APIView):
     def get(self, request):
         items = Menu.objects.all()
         serializer = MenuSerializer(items,many = True)
@@ -14,5 +18,22 @@ class MenuView(APIView):
         serializer = MenuSerializer(data = request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"status":"success","data":serializer.data})
-        
+            return Response({"status":"success","data":serializer.data}) """
+
+class UserViewSet(viewsets.ModelViewSet):
+    permission_classes= [IsAuthenticated]
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
+class MenuItemsView(generics.ListCreateAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+    
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+    permission_classes = [IsAuthenticated]
