@@ -15,3 +15,7 @@ littlelemon/restaurant/__pycache__/views.cpython-311.pyc
 littlelemon/restaurant/migrations/__pycache__/0001_initial.cpython-311.pyc
 littlelemon/littlelemon/local_settings.py
 littlelemon/littlelemon/__pycache__/local_settings.cpython-311.pyc
+littlelemon/test/__pycache__/__init__.cpython-311.pyc
+littlelemon/test/__pycache__/test_models.cpython-311.pyc
+littlelemon/test/__pycache__/test_views.cpython-311.pyc
+littlelemon/restaurant/__pycache__/tests.cpython-311.pyc
