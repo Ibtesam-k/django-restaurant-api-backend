@@ -20,12 +20,11 @@ from rest_framework import routers
 from restaurant.views import UserViewSet, BookingViewSet
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'tables', BookingViewSet)
+router.register(r'bookings', BookingViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('restaurant/', include("restaurant.urls")),
-    #path('', include(router.urls)),
-    path('restaurant/booking/', include(router.urls)),
+    path('api/', include("restaurant.urls")),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken'))

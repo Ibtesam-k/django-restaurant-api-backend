@@ -10,16 +10,8 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
-""" class MenuView(APIView):
-    def get(self, request):
-        items = Menu.objects.all()
-        serializer = MenuSerializer(items,many = True)
-        return Response(serializer.data)
-    def post(self, request):
-        serializer = MenuSerializer(data = request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"status":"success","data":serializer.data}) """
+def index(request):
+    return render(request, 'index.html', {})
 
 class UserViewSet(viewsets.ModelViewSet):
     permission_classes= [IsAuthenticated]
@@ -27,18 +19,21 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     
 class MenuItemsView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
-    permission_classes = [IsAuthenticated]
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
     
+    
 class BookingViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+    
     
 @api_view()
 @permission_classes([IsAuthenticated])
