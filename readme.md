@@ -24,6 +24,15 @@ Run model and view unit tests using the following commands:
 ```
 python manage.py test
 ```
+## Create superuser
+If you haven't created any users yet, create at least one using the following command
+```
+python manage.py createsuperuser
+```
+Now you can visit the admin page to add more users or create objects
+
+   - URL: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+   - Description: Django admin homepage.
 
 ## Usage
 
