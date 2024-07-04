@@ -58,9 +58,13 @@ Now you can visit the following URLs assuming your project works on port 8000.
    - Read, update, or delete information of a single booking through DRF API (specify item id).
    - URL: [http://127.0.0.1:8000/api/bookings/1/](http://127.0.0.1:8000/api/bookings/1/)
 
-6. **Users**
+6. **Users Management using Djoser**
    - Read existing users or register a new user.
    - URL: [http://127.0.0.1:8000/auth/users/](http://127.0.0.1:8000/auth/users/)
+   - Login with user credentials and get access token 
+   - URL: [http://127.0.0.1:8000/auth/token/login](http://127.0.0.1:8000/auth/token/login/)
+   - Logout (post auth token you want to destroy)
+   - URL: [http://127.0.0.1:8000/auth/token/logout](http://127.0.0.1:8000/auth/token/logout/)
 
 ## Important Notes
 - Users must be logged in to perform operations through the web interface.
