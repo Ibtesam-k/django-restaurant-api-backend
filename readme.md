@@ -62,7 +62,9 @@ Now you can visit the following URLs assuming your project works on port 8000.
    - Read existing users or register a new user.
    - URL: [http://127.0.0.1:8000/auth/users/](http://127.0.0.1:8000/auth/users/)
 
-## Notes
+## Important Notes
+- Users must be logged in to perform operations through the web interface.
+- Users must specify a token when performing operations using an API client like Insomnia.
 - Make sure to generate necessary tokens for your users. You can do this either through the admin interface or by using the following URL: [http://127.0.0.1:8000/api/api-token-auth/](http://127.0.0.1:8000/api/api-token-auth/) (using Insomnia or a similar tool).
 
 Feel free to reach out if you encounter any issues or have any questions.
