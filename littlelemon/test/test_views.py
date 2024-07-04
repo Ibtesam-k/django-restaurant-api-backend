@@ -15,7 +15,7 @@ class MenuViewTest(TestCase):
          client = Client()
          headers = {'HTTP_AUTHORIZATION': f'Token {self.token.key}'}
 
-         response = client.get('/restaurant/menu/',**headers)
+         response = client.get('/api/menu-items/',**headers)
 
          self.assertEqual(response.status_code, 200)
 
